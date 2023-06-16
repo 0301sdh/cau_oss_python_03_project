@@ -41,6 +41,25 @@ class parking_spot:
         for space in spots:
             print(space)
 
+    def filter_by_name(self, spots, name):
+        return [space for space in spots if name.lower() in space.get('name').lower()]
+
+    def filter_by_city(self, spots, city):
+        return [space for space in spots if city.lower() in space.get('city').lower()]
+
+    def filter_by_district(self, spots, district):
+        return [space for space in spots if district.lower() in space.get('district').lower()]
+
+    def filter_by_ptype(self, spots, ptype):
+        return [space for space in spots if ptype.lower() in space.get('ptype').lower()]
+    
+    def filter_by_location(self, spots, min_lat, max_lat, min_long, max_long):
+        return [
+            space for space in spots
+            if min_lat <= space.get('latitude') <= max_lat
+            and min_long <= space.get('longitude') <= max_long
+        ]
+    
 Myparking  = parking_spot("Name", "City", "District", "Ptype", 30.534, 130.23)
  
 

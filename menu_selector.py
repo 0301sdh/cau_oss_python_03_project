@@ -23,26 +23,31 @@ def start_process(path):
             select = int(input('type:'))
             if select == 1:
                 keyword = input('type name:')
-                print("not implemented yet")
+                parking_fliter_list = parking_spot_manager.Myparking.filter_by_name(space_list, keyword)
+                parking_spot_manager.Myparking.print_spots(parking_fliter_list)
                 # fill this block
             elif select == 2:
                 keyword = input('type city:')
-                print("not implemented yet")
+                parking_fliter_list = parking_spot_manager.Myparking.filter_by_city(space_list, keyword)
+                parking_spot_manager.Myparking.print_spots(parking_fliter_list)
                 # fill this block
             elif select == 3:
                 keyword = input('type district:')
-                print("not implemented yet")
+                parking_fliter_list = parking_spot_manager.Myparking.filter_by_district(space_list, keyword)
+                parking_spot_manager.Myparking.print_spots(parking_fliter_list)
                 # fill this block
             elif select == 4:
                 keyword = input('type ptype:')
-                print("not implemented yet")
+                parking_fliter_list = parking_spot_manager.Myparking.filter_by_ptype(space_list, keyword)
+                parking_spot_manager.Myparking.print_spots(parking_fliter_list)
                 # fill this block
             elif select == 5:
                 min_lat = float(input('type min lat:'))
                 max_lat = float(input('type max lat:'))
                 min_lon = float(input('type min long:'))
                 max_lon = float(input('type max long:'))
-                print("not implemented yet")
+                parking_fliter_list = parking_spot_manager.Myparking.filter_by_location(space_list, min_lat, max_lat, min_lon, max_lon)
+                parking_spot_manager.Myparking.print_spots(parking_fliter_list)
                 # fill this block
             else:
                 print("invalid input")
