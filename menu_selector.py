@@ -12,7 +12,7 @@ def start_process(path):
         select = int(input('type:'))
         if select == 1:
             parking_spot_manager.Myparking.print_spots(space_list)
-            # fill this block
+            
         elif select == 2:
             print("---filter by---")
             print("[1] name")
@@ -25,22 +25,22 @@ def start_process(path):
                 keyword = input('type name:')
                 parking_fliter_list = parking_spot_manager.Myparking.filter_by_name(space_list, keyword)
                 parking_spot_manager.Myparking.print_spots(parking_fliter_list)
-                # fill this block
+                
             elif select == 2:
                 keyword = input('type city:')
                 parking_fliter_list = parking_spot_manager.Myparking.filter_by_city(space_list, keyword)
                 parking_spot_manager.Myparking.print_spots(parking_fliter_list)
-                # fill this block
+                
             elif select == 3:
                 keyword = input('type district:')
                 parking_fliter_list = parking_spot_manager.Myparking.filter_by_district(space_list, keyword)
                 parking_spot_manager.Myparking.print_spots(parking_fliter_list)
-                # fill this block
+                
             elif select == 4:
                 keyword = input('type ptype:')
                 parking_fliter_list = parking_spot_manager.Myparking.filter_by_ptype(space_list, keyword)
                 parking_spot_manager.Myparking.print_spots(parking_fliter_list)
-                # fill this block
+                
             elif select == 5:
                 min_lat = float(input('type min lat:'))
                 max_lat = float(input('type max lat:'))
@@ -48,7 +48,7 @@ def start_process(path):
                 max_lon = float(input('type max long:'))
                 parking_fliter_list = parking_spot_manager.Myparking.filter_by_location(space_list, min_lat, max_lat, min_lon, max_lon)
                 parking_spot_manager.Myparking.print_spots(parking_fliter_list)
-                # fill this block
+                
             else:
                 print("invalid input")
         elif select == 3:
@@ -57,12 +57,14 @@ def start_process(path):
             print(keywords)
             keyword = input('type keyword:')
             if keyword in keywords:
-                print("not implemented yet")
-                # fill this block
+                parking_space_list = parking_spot_manager.Myparking.sort_by_keyword(space_list, keyword)
+                parking_spot_manager.Myparking.print_spots(parking_space_list)
+                space_list = parking_space_list
+                
             else: print("invalid input")
         elif select == 4:
             print("Exit")
             break
-            # fill this block
+           
         else:
             print("invalid input")

@@ -60,6 +60,9 @@ class parking_spot:
             and min_long <= space.get('longitude') <= max_long
         ]
     
+    def sort_by_keyword(self, spots, keyword):
+        return sorted(spots, key=lambda space: space.get(keyword))
+    
 Myparking  = parking_spot("Name", "City", "District", "Ptype", 30.534, 130.23)
  
 
@@ -73,9 +76,9 @@ if __name__ == '__main__':
     Myparking.print_spots(spots)
 
     # version#3
-    # spots = filter_by_district(spots, '동작')
-    # print_spots(spots)
+    spots = Myparking.filter_by_district(spots, '동작')
+    Myparking.print_spots(spots)
     
     # version#4
-    # spots = sort_by_keyword(spots, 'name')
-    # print_spots(spots)
+    spots = Myparking.sort_by_keyword(spots, 'name')
+    Myparking.print_spots(spots)
